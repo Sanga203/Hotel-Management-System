@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Kubernetes Deployment') {
             steps {
-                sh "kubectl apply -f deployment.yaml"
+                sh "kubectl apply -f deployment.yaml --validate=false"
                 sh "sleep 10"
                 sh "kubectl get svc"
             }
