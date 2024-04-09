@@ -22,12 +22,6 @@ pipeline {
             sh "mvn clean verify sonar:sonar -DskipTests=true -Dsonar.projectKey='Hotel-management' -Dsonar.host.url='http://20.246.95.180:9000' -Dsonar.login=sqa_68981035c032709be2e5f5def0ad5c323d8e524c" 
         }
         }
-        stage('Kubernetes Deployment') {
-            steps {
-                sh "kubectl apply -f deployment.yaml --validate=false"
-                sh "sleep 10"
-                sh "kubectl get svc"
-            }
-        }
+
     }
 }
