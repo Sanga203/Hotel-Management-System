@@ -22,7 +22,7 @@ spec:
     - protocol: TCP
       port: 9090
       targetPort: 8089
-  type: NodePort  # Set the service type to NodePort
+  type: NodePort  
 
 
 ---
@@ -47,11 +47,11 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRES_DB
-              value: "hotel"  # Ensure values are represented as strings
+              value: "hotel" 
             - name: POSTGRES_USER
-              value: "postgres"  # Ensure values are represented as strings
+              value: "postgres" 
             - name: POSTGRES_PASSWORD
-              value: "12345"  # Ensure values are represented as strings
+              value: "12345"  
 
 ---
 apiVersion: apps/v1
